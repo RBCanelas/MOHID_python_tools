@@ -8,7 +8,7 @@ commonPath = os.path.abspath(os.path.join(basePath,"..","Common"))
 sys.path.append(commonPath)
 try: import MDateTime as mdate
 except:
-	commonPath = raw_input("Please provide the path of the Common directory of the MOHID python tools package: ")
+	commonPath = input("Please provide the path of the Common directory of the MOHID python tools package: ")
 	sys.path.append(commonPath)
 	import MDateTime as mdate
 	
@@ -45,7 +45,7 @@ renderView1 = GetActiveView()
 # create a new 'Python Annotation'
 pythonAnnotation1 = PythonAnnotation(Input=programmableFilter1)
 # Properties modified on pythonAnnotation1
-pythonAnnotation1.ArrayAssociation = 'Row Data'
+pythonAnnotation1.ArrayAssociation = "Row Data"
 pythonAnnotation1.Expression ='"{}".format(input.RowData["datetime"].GetValue(0))'
 # show data in view
 pythonAnnotation1Display = Show(pythonAnnotation1, renderView1)
